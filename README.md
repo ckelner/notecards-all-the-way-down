@@ -8,20 +8,20 @@ A friend (`friend-one`) wanted this app.  I decided I wanted to do it, but not p
 
 `friend-one`:
 > actually i have an idea for a webapp but i don’t know if anyone but me would ever use it
-> 
+>
 > i have a raging hardon for hierarchical lists that can nest at n layers. i live and breathe workflowy, which is basically that - bullets with infinite levels
-> 
+>
 > but doing that with notecards would be nice
-> 
+>
 > like, you have a notecard with a title, but you can “zoom in” on that notecard to see all the notecards within it
-> 
+>
 > kind of like in Snow Crash, how they used things that looked like business cards to carry all sorts of data
 
 `friend-two`:
 > So you have a dashboard filled with notecards, and you can click to edit them, and the notecard size grows to contain the list?
-> 
+>
 > Can you link notecards?
-> 
+>
 > Pretty much my life run by is a series of indented items. e.g.:
 
 ```
@@ -58,7 +58,7 @@ Liz
 
 `friend-one`:
 > yes, each notecard can open up to become a new dashboard with its own notecards, with references to associated cards at the same or other levels
-> 
+>
 > lol you are brave
 
 `friend-two`:
@@ -66,32 +66,32 @@ Liz
 
 `friend-one`:
 > yes
-> 
+>
 > i think my workflowy has something like 15,000 bulleted items in it now
-> 
+>
 > i use it for literally everything
-> 
+>
 > it’s just not great for visual things
-> 
+>
 > a fractal corkboard would make my life 10x better
 
 `friend-two`:
 > You want Pintrest?
-> 
+>
 > Pintrest: Recursive Edition?
 
 `friend-one`:
 > well, something with more organization than pinterest
-> 
+>
 > so yeah pinterest with recursion would be good
-> 
+>
 > well, except that pinterest requires some media to base a post on
-> 
+>
 > so pinterest for plaintext + media
 
 `friend-two`:
 > Can you make some wireframes? Could be fun
-> 
+>
 > Maybe I’ll give React.JS a spin
 
 `friend-one`:
@@ -102,16 +102,17 @@ Liz
 
 `friend-one`:
 > only when making a bread plate :V
-> 
+>
 > brb work
-> 
-> uploaded an image: notecardwf.png 
+>
+> uploaded an image: notecardwf.png
+![img](notecardwf.png)
 
 `friend-two`:
 > > brb work
 
 > Classic
-> 
+>
 > Slack is the top priority. Work must come second
 
 `friend-one`:
@@ -126,14 +127,14 @@ Liz
 ```
 
 > Item 1 is a notecard, and you can see Subitem 1 as a list item, but clicking “Subitem 1” expands a new notecard for Subitem 1?
-> 
+>
 > And Subitem 1 can have its own subitems, and so on?
-> 
+>
 > When do subitems become notecards? Automatically?
 
 `friend-one`:
 > yes
-> 
+>
 > everything is a notecard and a list item
 
 `friend-three`:
@@ -141,15 +142,15 @@ Liz
 
 `friend-one`:
 > ^
-> 
+>
 > get to work, we’re done
-> 
+>
 > lmk when you’re done and i’ll start using it
 
 `friend-three`:
 > THEN we can slap ads on it, get some SEO, and retire. (Notice how I said we. I summarized the design doc for you)
 
-`friend-one`: 
+`friend-one`:
 > that’s how this team works, right? i’m the golden goose, friend-one and kelner do the work, and friend-three is middle management
 
 `me`
