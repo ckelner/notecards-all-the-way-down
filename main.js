@@ -1,13 +1,14 @@
 /************** global namespace ***********/
 var NOTECARDS = NOTECARDS || [];
+var NOTECARD_INDEX = 0;
 var NOTECARD_IN_FOCUS = null;
 var EDITING = false;
 /************** init *************/
 function init() {
-  var child = new Notecard("Item-one", null);
-  var notecard = new Notecard("Title", [child]);
+  var notecard = new Notecard("Title", null);
+  var child = new Notecard("Item-one", null, notecard.index);
   notecard.focus = true;
-  NOTECARDS.push(notecard);
+  notecard.addChild(child);
   NOTECARD_IN_FOCUS = notecard;
   Util.drawCards();
 }
@@ -43,25 +44,14 @@ function handleOnClick(e) {
   if(obj == undefined || obj == null || obj.nodeName == "HTML") {
     return;
   }
+  var noteCardIndex = obj.getAttribute("notecard_index");
   var button = document.createElement("button");
   var buttonText = document.createTextNode("Save");
   button.appendChild(buttonText);
   button.setAttribute("id", "edit_button");
-  switch(obj.nodeName) {
-    case "LI":
-      button.addEventListener('click', function() {
-        saveEdit("LI");
-      });
-    break;
-    case "H1":
-    button.addEventListener('click', function() {
-      saveEdit("H1");
-    });
-    break;
-    default:
-      return;
-    break;
-  }
+  button.addEventListener('click', function() {
+    saveEdit(noteCardIndex);
+  });
   var innerHTML = obj.innerHTML;
   var textArea = document.createElement('TEXTAREA');
   textArea.setAttribute("id", "edit_textarea");
@@ -73,17 +63,14 @@ function handleOnClick(e) {
   textArea.focus();
   EDITING = true;
 }
-function saveEdit(objName) {
+function saveEdit(noteCardIndex) {
   var textArea = document.getElementById('edit_textarea');
-  var newEl = document.createElement('H1');
-  if(objName == "LI") {
-    newEl = document.createElement('LI');
-  }
   var parentNode = textArea.parentNode;
-  newEl.innerHTML = textArea.value;
-  parentNode.insertBefore(newEl, textArea);
+  var newValue = textArea.value;
+  NOTECARDS[noteCardIndex].title = newValue;
   parentNode.removeChild(textArea);
   parentNode.removeChild(document.getElementById('edit_button'));
+  Util.drawCards();
   EDITING = false;
 }
 document.onclick = handleOnClick;
