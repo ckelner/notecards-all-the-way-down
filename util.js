@@ -23,13 +23,14 @@ var Util = new function() {
     var len = NOTECARD_IN_FOCUS.children.length;
     var ncChildContainer = document.getElementById("notecard_children_container");
     ncChildContainer.innerHTML = "";
-    for(i=0; i < len; i++) {
+    for(var i=0; i < len; i++) {
       ncChildContainer.appendChild(
-        this.createNoteCardDiv(NOTECARD_IN_FOCUS.children[i],NOTECARD_IN_FOCUS.index)
+        this.createNoteCardDiv(NOTECARD_IN_FOCUS.children[i])
       );
     }
   };
-  this.createNoteCardDiv = function(notecard,NOTECARD_IN_FOCUS) {
+  // TODO: Should this logic within the notecard itself?
+  this.createNoteCardDiv = function(notecard) {
     var div = document.createElement("div");
     div.className += " notecard";
     div.setAttribute("notecard_index", notecard.index);
@@ -39,8 +40,8 @@ var Util = new function() {
     list.setAttribute("notecard_index", notecard.index);
     title.innerHTML = "<h1 notecard_index='" + notecard.index + "'>" + notecard.title + "</h1>";
     var len = notecard.children.length;
-    for(i=0; i < len; i++) {
-      list.innerHTML += "<li notecard_index='" + notecard.index + "'>" + notecard.children[i].title + "</li>";
+    for(var i=0; i < len; i++) {
+      list.innerHTML += "<li notecard_index='" + notecard.children[i].index + "'>" + notecard.children[i].title + "</li>";
     }
     div.appendChild(title);
     div.appendChild(list);

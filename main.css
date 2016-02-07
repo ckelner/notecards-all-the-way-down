@@ -4,4 +4,12 @@
   border: 1px solid black;
   padding-left: 10px;
   padding-right: 10px;
+  margin-top: 10px;
+}
+#notecard_container {
+  float: left;
+}
+#notecard_children_container {
+  float: left;
+  padding-left: 20px;
 }

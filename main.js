@@ -5,10 +5,14 @@ var NOTECARD_IN_FOCUS = null;
 var EDITING = false;
 /************** init *************/
 function init() {
-  var notecard = new Notecard("Title", null);
+  var notecard = new Notecard("Title", null, null);
   var child = new Notecard("Item-one", null, notecard.index);
-  notecard.focus = true;
+  var childTwo = new Notecard("Item-two", null, notecard.index);
+  var childThree = new Notecard("Item-three", null, notecard.index);
   notecard.addChild(child);
+  notecard.addChild(childTwo);
+  notecard.addChild(childThree);
+  notecard.focus = true;
   NOTECARD_IN_FOCUS = notecard;
   Util.drawCards();
 }
@@ -19,6 +23,7 @@ if(window.addEventListener) {
 } else {
   window.onload = init;
 }
+// TODO: Move into Util class
 function handleOnClick(e) {
   if(EDITING) {
     return;
@@ -63,6 +68,7 @@ function handleOnClick(e) {
   textArea.focus();
   EDITING = true;
 }
+// TODO: Move into Util class
 function saveEdit(noteCardIndex) {
   var textArea = document.getElementById('edit_textarea');
   var parentNode = textArea.parentNode;
@@ -73,4 +79,5 @@ function saveEdit(noteCardIndex) {
   Util.drawCards();
   EDITING = false;
 }
+// TODO: Move into init function
 document.onclick = handleOnClick;
