@@ -39,7 +39,7 @@ function handleOnClick(e) {
   while (obj.nodeType != 1) {
     obj = obj.parentNode;
   }
-  if(obj.tagName == "TEXTAREA" || obj.tagName == "A") {
+  if(obj.tagName == "TEXTAREA") {
     return;
   }
   while(obj != undefined && obj != null && obj.nodeName != "HTML" &&
@@ -50,17 +50,18 @@ function handleOnClick(e) {
     return;
   }
   var noteCardIndex = obj.getAttribute("notecard_index");
+  var parentNode = obj.parentNode;
+  var parentIndex = parentNode.getAttribute("notecard_index");
   var button = document.createElement("button");
   var buttonText = document.createTextNode("Save");
   button.appendChild(buttonText);
   button.setAttribute("id", "edit_button");
   button.addEventListener('click', function() {
-    saveEdit(noteCardIndex);
+    saveEdit(noteCardIndex,parentIndex);
   });
   var innerHTML = obj.innerHTML;
   var textArea = document.createElement('TEXTAREA');
   textArea.setAttribute("id", "edit_textarea");
-  var parentNode = obj.parentNode;
   parentNode.insertBefore(textArea, obj);
   parentNode.insertBefore(button, obj);
   parentNode.removeChild(obj);
@@ -69,11 +70,15 @@ function handleOnClick(e) {
   EDITING = true;
 }
 // TODO: Move into Util class
-function saveEdit(noteCardIndex) {
+function saveEdit(noteCardIndex,parentIndex) {
   var textArea = document.getElementById('edit_textarea');
   var parentNode = textArea.parentNode;
   var newValue = textArea.value;
-  NOTECARDS[noteCardIndex].title = newValue;
+  if(noteCardIndex == null && parentIndex != null) {
+    Util.addSubCard(parentIndex,newValue);
+  } else {
+    NOTECARDS[noteCardIndex].title = newValue;
+  }
   parentNode.removeChild(textArea);
   parentNode.removeChild(document.getElementById('edit_button'));
   Util.drawCards();

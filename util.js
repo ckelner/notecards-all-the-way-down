@@ -6,6 +6,11 @@ var Util = new function() {
     }
     NOTECARDS.push(notecard);
   };
+  this.addSubCard = function(notecard_index,title) {
+    var nc = NOTECARDS[notecard_index];
+    var child = new Notecard(title, null, nc.index);
+    nc.addChild(child);
+  };
   this.setupAddNoteCardButton = function() {
     document.getElementById("add_notecard").onclick = function() {
       Util.addNotecard(null,null,null);
@@ -43,6 +48,7 @@ var Util = new function() {
     for(var i=0; i < len; i++) {
       list.innerHTML += "<li notecard_index='" + notecard.children[i].index + "'>" + notecard.children[i].title + "</li>";
     }
+    list.innerHTML += "<li><a href='#'>+(add notecard)</a></li>";
     div.appendChild(title);
     div.appendChild(list);
     return div;
