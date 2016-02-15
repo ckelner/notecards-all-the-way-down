@@ -3,6 +3,7 @@ var NOTECARDS = NOTECARDS || [];
 var NOTECARD_INDEX = 0;
 var NOTECARD_IN_FOCUS = null;
 var EDITING = false;
+var NEW_SUBCARD_CLASS = 'addNoteCardDeleteMe';
 /************** init *************/
 function init() {
   var notecard = new Notecard("Title", null, null);
@@ -65,7 +66,9 @@ function handleOnClick(e) {
   parentNode.insertBefore(textArea, obj);
   parentNode.insertBefore(button, obj);
   parentNode.removeChild(obj);
-  textArea.value = innerHTML;
+  if( obj.innerHTML.indexOf(NEW_SUBCARD_CLASS) == -1 ) {
+    textArea.value = innerHTML;
+  }
   textArea.focus();
   EDITING = true;
 }

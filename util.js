@@ -48,7 +48,7 @@ var Util = new function() {
     for(var i=0; i < len; i++) {
       list.innerHTML += "<li notecard_index='" + notecard.children[i].index + "'>" + notecard.children[i].title + "</li>";
     }
-    list.innerHTML += "<li><a href='#'>+(add notecard)</a></li>";
+    list.innerHTML += "<li><a href='#' class='" + NEW_SUBCARD_CLASS + "'>+(add notecard)</a></li>";
     div.appendChild(title);
     div.appendChild(list);
     return div;
