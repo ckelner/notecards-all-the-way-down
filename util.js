@@ -62,9 +62,57 @@ var Util = new function() {
     for(var i=0; i < len; i++) {
       list.innerHTML += "<li notecard_index='" + notecard.children[i].index + "'>" + notecard.children[i].title + "</li>";
     }
-    list.innerHTML += "<li><a href='#' class='" + NEW_SUBCARD_CLASS + "'>+(add notecard)</a></li>";
+    list.innerHTML += "<li notecard_index='" + notecard.index + "'><a href='#' class='" + NEW_SUBCARD_CLASS + "'>+(add notecard)</a></li>";
+    title.addEventListener("click", Util.notecardTitleListOnClick, false);
     div.appendChild(title);
+    list.addEventListener("click", Util.notecardTitleListOnClick, false);
     div.appendChild(list);
     return div;
   };
+  this.notecardTitleListOnClick = function(e) {
+    if(EDITING || e.path[0].id == "edit_button") {
+      return;
+    }
+    var obj = null;
+    if(!e) {
+      obj = window.event.srcElement;
+    } else {
+      obj = e.target;
+    }
+    var noteCardIndex = obj.getAttribute("notecard_index");
+    var parentNode = obj.parentNode;
+    var parentIndex = parentNode.getAttribute("notecard_index");
+    var button = document.createElement("button");
+    var buttonText = document.createTextNode("Save");
+    button.appendChild(buttonText);
+    button.setAttribute("id", "edit_button");
+    button.addEventListener('click', function() {
+      Util.saveEdit(noteCardIndex,parentIndex);
+    });
+    var innerHTML = obj.innerHTML;
+    var textArea = document.createElement('TEXTAREA');
+    textArea.setAttribute("id", "edit_textarea");
+    parentNode.insertBefore(textArea, obj);
+    parentNode.insertBefore(button, obj);
+    parentNode.removeChild(obj);
+    if( obj.innerHTML.indexOf(NEW_SUBCARD_CLASS) == -1 && obj.className.indexOf(NEW_SUBCARD_CLASS) == -1 ) {
+      textArea.value = innerHTML;
+    }
+    textArea.focus();
+    EDITING = true;
+  };
+  this.saveEdit = function(noteCardIndex,parentIndex) {
+    var textArea = document.getElementById('edit_textarea');
+    var parentNode = textArea.parentNode;
+    var newValue = textArea.value;
+    if(noteCardIndex == null && parentIndex != null) {
+      Util.addSubCard(parentIndex,newValue);
+    } else {
+      NOTECARDS[noteCardIndex].title = newValue;
+    }
+    parentNode.removeChild(textArea);
+    parentNode.removeChild(document.getElementById('edit_button'));
+    Util.drawCards();
+    EDITING = false;
+  }
 };
