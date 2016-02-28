@@ -27,7 +27,7 @@ var Util = new function() {
     );
     // focus level new card div
     ncContainer.appendChild(
-      this.createNewNoteCardDiv(NOTECARD_IN_FOCUS.index)
+      this.createNewNoteCardDiv(NOTECARD_IN_FOCUS.index, NOTECARD_IN_FOCUS.parentIndex)
     );
     // child cards
     var len = NOTECARD_IN_FOCUS.children.length;
@@ -40,13 +40,14 @@ var Util = new function() {
     }
   };
   // TODO: Make this more DRY w/ createNoteCardDiv()? /shrug
-  this.createNewNoteCardDiv = function(index) {
+  this.createNewNoteCardDiv = function(index,pIndex) {
     var div = document.createElement("div");
     div.className += " new_card";
     div.setAttribute("notecard_index", index);
     var title = document.createElement("p");
     title.innerHTML = "<h3>Add new notecard at this level</h3><h1>+</h1>";
     div.appendChild(title);
+    //div.addEventListener("click", Util.notecardTitleListOnClick, false);
     return div;
   };
   this.createNoteCardDiv = function(notecard) {
