@@ -1,3 +1,4 @@
+/** @ckelner: Here be dragons: THE GOD CLASS! **/
 var Util = new function() {
   this.addNotecard = function(parent,title,children) {
     var notecard = new Notecard(title,children);
@@ -24,6 +25,10 @@ var Util = new function() {
     ncContainer.appendChild(
       this.createNoteCardDiv(NOTECARD_IN_FOCUS)
     );
+    // focus level new card div
+    ncContainer.appendChild(
+      this.createNewNoteCardDiv(NOTECARD_IN_FOCUS.index)
+    );
     // child cards
     var len = NOTECARD_IN_FOCUS.children.length;
     var ncChildContainer = document.getElementById("notecard_children_container");
@@ -34,7 +39,16 @@ var Util = new function() {
       );
     }
   };
-  // TODO: Should this logic within the notecard itself?
+  // TODO: Make this more DRY w/ createNoteCardDiv()? /shrug
+  this.createNewNoteCardDiv = function(index) {
+    var div = document.createElement("div");
+    div.className += " new_card";
+    div.setAttribute("notecard_index", index);
+    var title = document.createElement("p");
+    title.innerHTML = "<h3>Add new notecard at this level</h3><h1>+</h1>";
+    div.appendChild(title);
+    return div;
+  };
   this.createNoteCardDiv = function(notecard) {
     var div = document.createElement("div");
     div.className += " notecard";

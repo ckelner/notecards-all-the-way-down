@@ -13,3 +13,16 @@
   float: left;
   padding-left: 20px;
 }
+.new_card {
+  border: 1px dashed gray;
+  margin-top: 10px;
+  color: gray;
+}
+.new_card h3, h1 {
+  text-align: center;
+}
+.new_card h1 {
+  font-weight: 900;
+  font-size: 4em;
+  margin: 0px;
+}
