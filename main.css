@@ -5,6 +5,13 @@
   padding-left: 10px;
   padding-right: 10px;
   margin-top: 10px;
+  background-color: #E0E0E0;
+}
+.focus {
+  background-color: #C1FFC1;
+}
+.focus_child {
+  background-color: #F0FFF0;
 }
 #notecard_container {
   float: left;
@@ -12,4 +19,17 @@
 #notecard_children_container {
   float: left;
   padding-left: 20px;
+}
+.new_card {
+  border: 1px dashed gray;
+  margin-top: 10px;
+  color: gray;
+}
+.new_card h3, .new_card h1 {
+  text-align: center;
+}
+.new_card h1 {
+  font-weight: 900;
+  font-size: 4em;
+  margin: 0px;
 }
