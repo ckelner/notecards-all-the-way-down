@@ -1,5 +1,5 @@
 var Notecard = function(title, children, parentIndex) {
-  this.title = title || "";
+  this.title = title || "Placeholder (Click me)";
   this.children = children || []; //array
   this.focus = false;
   this.index = NOTECARD_INDEX;
