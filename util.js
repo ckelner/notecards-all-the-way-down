@@ -68,6 +68,12 @@ var Util = new function() {
       }
     }
     div.setAttribute("notecard_index", notecard.index);
+    var focus = document.createElement("div");
+    focus.setAttribute("notecard_index", notecard.index);
+    focus.innerHTML += "Focus";
+    focus.className += " focus_button";
+    focus.addEventListener("click", Util.focusOnNoteCardOnClick, false);
+    div.appendChild(focus);
     var title = document.createElement("p");
     title.setAttribute("notecard_index", notecard.index);
     var list = document.createElement("ul");
@@ -83,6 +89,9 @@ var Util = new function() {
     list.addEventListener("click", Util.notecardTitleListOnClick, false);
     div.appendChild(list);
     return div;
+  };
+  this.focusOnNoteCardOnClick = function(e) {
+    //TODO
   };
   this.notecardTitleListOnClick = function(e) {
     if(EDITING || e.path[0].id == "edit_button") {
