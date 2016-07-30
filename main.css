@@ -5,6 +5,13 @@
   padding-left: 10px;
   padding-right: 10px;
   margin-top: 10px;
+  background-color: #E0E0E0;
+}
+.focus {
+  background-color: #C1FFC1;
+}
+.focus_child {
+  background-color: #F0FFF0;
 }
 #notecard_container {
   float: left;

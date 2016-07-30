@@ -60,6 +60,13 @@ var Util = new function() {
   this.createNoteCardDiv = function(notecard) {
     var div = document.createElement("div");
     div.className += " notecard";
+    if(notecard.index == NOTECARD_IN_FOCUS.index) {
+      div.className += " focus";
+    } else {
+      if(notecard.parentIndex == NOTECARD_IN_FOCUS.index) {
+        div.className += " focus_child";
+      }
+    }
     div.setAttribute("notecard_index", notecard.index);
     var title = document.createElement("p");
     title.setAttribute("notecard_index", notecard.index);
