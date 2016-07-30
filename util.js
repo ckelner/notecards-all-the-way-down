@@ -91,7 +91,15 @@ var Util = new function() {
     return div;
   };
   this.focusOnNoteCardOnClick = function(e) {
-    //TODO
+    var obj = null;
+    if(!e) {
+      obj = window.event.srcElement;
+    } else {
+      obj = e.target;
+    }
+    var noteCardIndex = obj.getAttribute("notecard_index");
+    NOTECARD_IN_FOCUS = NOTECARDS[noteCardIndex];
+    Util.drawCards();
   };
   this.notecardTitleListOnClick = function(e) {
     if(EDITING || e.path[0].id == "edit_button") {
