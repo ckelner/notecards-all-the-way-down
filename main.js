@@ -15,7 +15,16 @@ function init() {
   notecard.addChild(childThree);
   notecard.focus = true;
   NOTECARD_IN_FOCUS = notecard;
+  var goUpStackDiv = document.getElementById("go_up_one_level");
+  goUpStackDiv.addEventListener("click", goBackUpStack, false);
   Util.drawCards();
+}
+function goBackUpStack() {
+  // top of stack is undefined/null
+  if(NOTECARD_IN_FOCUS.parentIndex != undefined && NOTECARD_IN_FOCUS.parentIndex != null) {
+    NOTECARD_IN_FOCUS = NOTECARDS[NOTECARD_IN_FOCUS.parentIndex];
+    Util.drawCards();
+  }
 }
 if(window.addEventListener) {
   window.addEventListener("load", init, false);

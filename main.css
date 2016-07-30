@@ -1,6 +1,23 @@
 body {
   font-family: sans-serif;
 }
+#controls {
+  color: grey;
+  border-bottom: 1px solid black;
+  vertical-align: middle;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+#go_up_one_level {
+  vertical-align: middle;
+  width: 180px;
+  border: 1px dotted black;
+  padding: 4px;
+  background-color: grey;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
 .notecard {
   width: 350px;
   height: 200px;
