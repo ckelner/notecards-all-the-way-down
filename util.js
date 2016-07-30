@@ -5,18 +5,15 @@ var Util = new function() {
     if(parent) {
       parent.addChild(notecard);
     }
-    NOTECARDS.push(notecard);
   };
   this.addSubCard = function(notecard_index,title) {
     var nc = NOTECARDS[notecard_index];
     var child = new Notecard(title, null, nc.index);
     nc.addChild(child);
   };
-  this.setupAddNoteCardButton = function() {
-    document.getElementById("add_notecard").onclick = function() {
-      Util.addNotecard(null,null,null);
-      Util.drawCards();
-    };
+  this.clickAddNoteCardDiv = function() {
+    Util.addNotecard(NOTECARDS[NOTECARD_IN_FOCUS.parentIndex],null,null);
+    Util.drawCards();
   };
   this.drawCards = function() {
     // focus card
@@ -25,6 +22,15 @@ var Util = new function() {
     ncContainer.appendChild(
       this.createNoteCardDiv(NOTECARD_IN_FOCUS)
     );
+    // sibling cards
+    var len_cards = NOTECARDS.length;
+    for(var i=0; i < len_cards; i++) {
+      if(NOTECARDS[i].parentIndex == NOTECARD_IN_FOCUS.parentIndex && NOTECARDS[i] != NOTECARD_IN_FOCUS) {
+        ncContainer.appendChild(
+          this.createNoteCardDiv(NOTECARDS[i])
+        );
+      }
+    }
     // focus level new card div
     ncContainer.appendChild(
       this.createNewNoteCardDiv(NOTECARD_IN_FOCUS.index, NOTECARD_IN_FOCUS.parentIndex)
@@ -43,11 +49,12 @@ var Util = new function() {
   this.createNewNoteCardDiv = function(index,pIndex) {
     var div = document.createElement("div");
     div.className += " new_card";
+    div.id = "new_card"
     div.setAttribute("notecard_index", index);
     var title = document.createElement("p");
     title.innerHTML = "<h3>Add new notecard at this level</h3><h1>+</h1>";
     div.appendChild(title);
-    //div.addEventListener("click", Util.notecardTitleListOnClick, false);
+    div.addEventListener("click", Util.clickAddNoteCardDiv, false);
     return div;
   };
   this.createNoteCardDiv = function(notecard) {
