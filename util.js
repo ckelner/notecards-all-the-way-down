@@ -1,7 +1,11 @@
 /** @ckelner: Here be dragons: THE GOD CLASS! **/
 var Util = new function() {
   this.addNotecard = function(parent,title,children) {
-    var notecard = new Notecard(title,children);
+    var index = null;
+    if(parent != undefined || parent != null) {
+      index = parent.index;
+    }
+    var notecard = new Notecard(title,children,index);
     if(parent) {
       parent.addChild(notecard);
     }
