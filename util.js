@@ -16,7 +16,7 @@ var Util = new function() {
     nc.addChild(child);
   };
   this.clickAddNoteCardDiv = function() {
-    Util.addNotecard(NOTECARDS[NOTECARD_IN_FOCUS.parentIndex],null,null);
+    Util.addNotecard(NOTECARDS[APP.notecard_in_focus.parentIndex],null,null);
     Util.drawCards();
   };
   this.drawCards = function() {
@@ -24,28 +24,28 @@ var Util = new function() {
     var ncContainer = document.getElementById("notecard_container");
     ncContainer.innerHTML = "";
     ncContainer.appendChild(
-      this.createNoteCardDiv(NOTECARD_IN_FOCUS)
+      this.createNoteCardDiv(APP.notecard_in_focus)
     );
     // sibling cards
-    var len_cards = NOTECARDS.length;
+    var len_cards = NOTECARDS[APP.notecard_in_focus.parentIndex].children.length;
     for(var i=0; i < len_cards; i++) {
-      if(NOTECARDS[i].parentIndex == NOTECARD_IN_FOCUS.parentIndex && NOTECARDS[i] != NOTECARD_IN_FOCUS) {
+      if(NOTECARDS[APP.notecard_in_focus.parentIndex].children[i] != APP.notecard_in_focus) {
         ncContainer.appendChild(
-          this.createNoteCardDiv(NOTECARDS[i])
+          this.createNoteCardDiv(NOTECARDS[APP.notecard_in_focus.parentIndex].children[i])
         );
       }
     }
     // focus level new card div
     ncContainer.appendChild(
-      this.createNewNoteCardDiv(NOTECARD_IN_FOCUS.index, NOTECARD_IN_FOCUS.parentIndex)
+      this.createNewNoteCardDiv(APP.notecard_in_focus.index, APP.notecard_in_focus.parentIndex)
     );
     // child cards
-    var len = NOTECARD_IN_FOCUS.children.length;
+    var len = APP.notecard_in_focus.children.length;
     var ncChildContainer = document.getElementById("notecard_children_container");
     ncChildContainer.innerHTML = "";
     for(var i=0; i < len; i++) {
       ncChildContainer.appendChild(
-        this.createNoteCardDiv(NOTECARD_IN_FOCUS.children[i])
+        this.createNoteCardDiv(APP.notecard_in_focus.children[i])
       );
     }
   };
@@ -64,10 +64,10 @@ var Util = new function() {
   this.createNoteCardDiv = function(notecard) {
     var div = document.createElement("div");
     div.className += " notecard";
-    if(notecard.index == NOTECARD_IN_FOCUS.index) {
+    if(notecard.index == APP.notecard_in_focus.index) {
       div.className += " focus";
     } else {
-      if(notecard.parentIndex == NOTECARD_IN_FOCUS.index) {
+      if(notecard.parentIndex == APP.notecard_in_focus.index) {
         div.className += " focus_child";
       }
     }
@@ -102,8 +102,9 @@ var Util = new function() {
       obj = e.target;
     }
     var noteCardIndex = obj.getAttribute("notecard_index");
-    NOTECARD_IN_FOCUS = NOTECARDS[noteCardIndex];
+    APP.notecard_in_focus = NOTECARDS[noteCardIndex];
     Util.drawCards();
+    EDITING = false;
   };
   this.notecardTitleListOnClick = function(e) {
     if(EDITING || e.path[0].id == "edit_button") {
