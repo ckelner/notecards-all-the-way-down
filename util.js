@@ -5,15 +5,21 @@ var Util = new function() {
     if(parent != undefined || parent != null) {
       index = parent.index;
     }
-    var notecard = new Notecard(title,children,index);
+    var notecard = new Notecard(title,children,index,APP.notecard_index);
+    APP.notecard_index++;
     if(parent) {
       parent.addChild(notecard);
     }
+    NOTECARDS[notecard.index] = notecard;
+    saveData();
   };
   this.addSubCard = function(notecard_index,title) {
     var nc = NOTECARDS[notecard_index];
-    var child = new Notecard(title, null, nc.index);
+    var child = new Notecard(title,null,nc.index,APP.notecard_index);
+    APP.notecard_index++;
     nc.addChild(child);
+    NOTECARDS[child.index] = child;
+    saveData();
   };
   this.clickAddNoteCardDiv = function() {
     Util.addNotecard(NOTECARDS[APP.notecard_in_focus.parentIndex],null,null);
@@ -24,12 +30,12 @@ var Util = new function() {
     var ncContainer = document.getElementById("notecard_container");
     ncContainer.innerHTML = "";
     ncContainer.appendChild(
-      this.createNoteCardDiv(APP.notecard_in_focus)
+      this.createNoteCardDiv(NOTECARDS[APP.notecard_in_focus.index])
     );
     // sibling cards
     var len_cards = NOTECARDS[APP.notecard_in_focus.parentIndex].children.length;
     for(var i=0; i < len_cards; i++) {
-      if(NOTECARDS[APP.notecard_in_focus.parentIndex].children[i] != APP.notecard_in_focus) {
+      if(NOTECARDS[APP.notecard_in_focus.parentIndex].children[i].index != APP.notecard_in_focus.index) {
         ncContainer.appendChild(
           this.createNoteCardDiv(NOTECARDS[APP.notecard_in_focus.parentIndex].children[i])
         );
@@ -102,8 +108,11 @@ var Util = new function() {
       obj = e.target;
     }
     var noteCardIndex = obj.getAttribute("notecard_index");
+    NOTECARDS[APP.notecard_in_focus.index].focus = false;
+    NOTECARDS[noteCardIndex].focus = true;
     APP.notecard_in_focus = NOTECARDS[noteCardIndex];
     Util.drawCards();
+    saveData();
     EDITING = false;
   };
   this.notecardTitleListOnClick = function(e) {
@@ -150,6 +159,7 @@ var Util = new function() {
     parentNode.removeChild(textArea);
     parentNode.removeChild(document.getElementById('edit_button'));
     Util.drawCards();
+    saveData();
     EDITING = false;
   }
 };
