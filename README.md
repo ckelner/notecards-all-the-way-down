@@ -1,6 +1,6 @@
 # Notecards all the way down
 
-A recursive notecard app.
+A recursive notecard app.  Incomplete - Still a _**WIP**_
 
 ## Background
 
