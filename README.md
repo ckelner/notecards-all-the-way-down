@@ -6,10 +6,18 @@ A recursive notecard app.  Incomplete - Still a _**WIP**_
 
 See [prototype/README.md](/prototype).
 
-## Tools Used
+## Tools/Tech Used
 
-- [Node.js](https://nodejs.org/en/) for runtime
+- [Node](https://nodejs.org/en/) for runtime
 - [Yarn](https://yarnpkg.com/en/) for package management
+- [Babel](https://babeljs.io/) for ES6 to ES5
+- [ES6](http://es6-features.org/)
+
+## Dev Setup
+
+- Follow [Nodejs.org](https://nodejs.org/en/) instructions to install Node, or
+use a version manager like [NVM](https://github.com/creationix/nvm).
+- Follow [Yarnpkg.com](https://yarnpkg.com/en/) install instructions.
 
 ## Background
 
