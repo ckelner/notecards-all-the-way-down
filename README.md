@@ -17,6 +17,7 @@ See [prototype/README.md](/prototype).
 - [Flow](https://flowtype.org/) for static type checking
 - [Jest](https://facebook.github.io/jest/) for testing
 - [Husky](https://github.com/typicode/husky) for enforcing testing
+- [Express](http://expressjs.com/) for web framework
 
 ## Dev Setup
 
