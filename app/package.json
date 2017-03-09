@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/ckelner/notecards-all-the-way-down.git",
   "author": "ckelner <chris.kelner@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  }
 }
