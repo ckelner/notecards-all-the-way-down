@@ -106,7 +106,7 @@ Liz
 > brb work
 >
 > uploaded an image: notecardwf.png
-![img](notecardwf.png)
+![wireframe](images/notecardwf.png)
 
 `friend-two`:
 > > brb work
