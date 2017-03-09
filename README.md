@@ -14,6 +14,7 @@ See [prototype/README.md](/prototype).
 - [ES6](http://es6-features.org/)
 - [ESLint](http://eslint.org/) for linting
   - [AirBnB's ESLint Config](https://www.npmjs.com/package/eslint-config-airbnb)
+- [Flow](https://flowtype.org/) for static type checking
 
 ## Dev Setup
 
