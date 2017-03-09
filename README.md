@@ -12,6 +12,8 @@ See [prototype/README.md](/prototype).
 - [Yarn](https://yarnpkg.com/en/) for package management
 - [Babel](https://babeljs.io/) for ES6 to ES5
 - [ES6](http://es6-features.org/)
+- [ESLint](http://eslint.org/) for linting
+  - [AirBnB's ESLint Config](https://www.npmjs.com/package/eslint-config-airbnb)
 
 ## Dev Setup
 
