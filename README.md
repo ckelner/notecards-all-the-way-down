@@ -2,6 +2,10 @@
 
 A recursive notecard app.  Incomplete - Still a _**WIP**_
 
+## Prototype
+
+See [prototype/README.md](/prototype).
+
 ## Background
 
 A friend (`friend-one`) wanted this app.  I decided I wanted to do it, but not put much effort into it.
