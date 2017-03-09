@@ -1,0 +1,9 @@
+{
+  "name": "notecards-all-the-way-down",
+  "version": "0.0.1",
+  "description": "A recursive notecard app",
+  "main": "index.js",
+  "repository": "https://github.com/ckelner/notecards-all-the-way-down.git",
+  "author": "ckelner <chris.kelner@gmail.com>",
+  "license": "MIT"
+}

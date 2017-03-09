@@ -6,6 +6,11 @@ A recursive notecard app.  Incomplete - Still a _**WIP**_
 
 See [prototype/README.md](/prototype).
 
+## Tools Used
+
+- [Node.js](https://nodejs.org/en/) for runtime
+- [Yarn](https://yarnpkg.com/en/) for package management
+
 ## Background
 
 A friend (`friend-one`) wanted this app.  I decided I wanted to do it, but not put much effort into it.
