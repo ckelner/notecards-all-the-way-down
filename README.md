@@ -18,6 +18,7 @@ See [prototype/README.md](/prototype).
 - [Jest](https://facebook.github.io/jest/) for testing
 - [Husky](https://github.com/typicode/husky) for enforcing testing
 - [Express](http://expressjs.com/) for web framework
+- [Nodemon](https://nodemon.io/) to watch for file changes and restart node (dev)
 
 ## Dev Setup
 
