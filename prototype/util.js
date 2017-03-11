@@ -78,13 +78,6 @@ var Util = new function() {
       }
     }
     div.setAttribute("notecard_index", notecard.index);
-    /* focus button */
-    var focus = document.createElement("div");
-    focus.setAttribute("notecard_index", notecard.index);
-    focus.innerHTML += "Focus";
-    focus.className += " focus_button";
-    focus.addEventListener("click", Util.focusOnNoteCardOnClick, false);
-    div.appendChild(focus);
     /* delete button */
     var deleteButton = document.createElement("div");
     deleteButton.setAttribute("notecard_index", notecard.index);
@@ -92,6 +85,13 @@ var Util = new function() {
     deleteButton.className += " delete_button";
     deleteButton.addEventListener("click", Util.deleteOnNoteCardOnClick, false);
     div.appendChild(deleteButton);
+    /* focus button */
+    var focus = document.createElement("div");
+    focus.setAttribute("notecard_index", notecard.index);
+    focus.innerHTML += "Focus";
+    focus.className += " focus_button";
+    focus.addEventListener("click", Util.focusOnNoteCardOnClick, false);
+    div.appendChild(focus);
     /* title and children */
     var title = document.createElement("p");
     title.setAttribute("notecard_index", notecard.index);

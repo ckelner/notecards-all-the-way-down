@@ -73,3 +73,18 @@ body {
   font-size: 4em;
   margin: 0px;
 }
+.delete_button {
+  width: 18px;
+  height: 23px;
+  border: 1px solid red;
+  font-size: large;
+  font-weight: 800;
+  color: white;
+  background: red;
+  padding-left: 5px;
+  padding-top: 3px;
+  float: right;
+  margin-left: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
