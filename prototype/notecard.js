@@ -7,4 +7,7 @@ var Notecard = function(title, children, parentIndex, index, focus=false) {
   this.addChild = function(child) {
     this.children.push(child);
   };
+  this.removeChild = function(index) {
+    this.children.remove(index); // TODO: Fixme, pseudo code
+  };
 };

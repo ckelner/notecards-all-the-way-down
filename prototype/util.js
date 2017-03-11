@@ -78,12 +78,21 @@ var Util = new function() {
       }
     }
     div.setAttribute("notecard_index", notecard.index);
+    /* focus button */
     var focus = document.createElement("div");
     focus.setAttribute("notecard_index", notecard.index);
     focus.innerHTML += "Focus";
     focus.className += " focus_button";
     focus.addEventListener("click", Util.focusOnNoteCardOnClick, false);
     div.appendChild(focus);
+    /* delete button */
+    var deleteButton = document.createElement("div");
+    deleteButton.setAttribute("notecard_index", notecard.index);
+    deleteButton.innerHTML += "X";
+    deleteButton.className += " delete_button";
+    deleteButton.addEventListener("click", Util.deleteOnNoteCardOnClick, false);
+    div.appendChild(deleteButton);
+    /* title and children */
     var title = document.createElement("p");
     title.setAttribute("notecard_index", notecard.index);
     var list = document.createElement("ul");
@@ -111,6 +120,21 @@ var Util = new function() {
     NOTECARDS[APP.notecard_in_focus.index].focus = false;
     NOTECARDS[noteCardIndex].focus = true;
     APP.notecard_in_focus = NOTECARDS[noteCardIndex];
+    Util.drawCards();
+    saveData();
+    EDITING = false;
+  };
+  this.deleteOnNoteCardOnClick = function(e) {
+    var obj = null;
+    if(!e) {
+      obj = window.event.srcElement;
+    } else {
+      obj = e.target;
+    }
+    var noteCardIndex = obj.getAttribute("notecard_index");
+    var parent = NOTECARDS[noteCardIndex];
+    parent.removeChild();
+    NOTECARDS[noteCardIndex].remove(); // pseudo code, hax; TODO: Fix me
     Util.drawCards();
     saveData();
     EDITING = false;
