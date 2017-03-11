@@ -88,7 +88,7 @@ var Util = new function() {
     title.setAttribute("notecard_index", notecard.index);
     var list = document.createElement("ul");
     list.setAttribute("notecard_index", notecard.index);
-    title.innerHTML = "<h1 notecard_index='" + notecard.index + "'>" + notecard.title + "</h1>";
+    title.innerHTML = "<h1 notecard_index='" + notecard.index + "'>#" + notecard.index + ": " + notecard.title + "</h1>";
     var len = notecard.children.length;
     for(var i=0; i < len; i++) {
       list.innerHTML += "<li notecard_index='" + notecard.children[i].index + "'>" + notecard.children[i].title + "</li>";
