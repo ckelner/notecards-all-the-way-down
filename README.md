@@ -21,6 +21,8 @@ See [prototype/README.md](/prototype).
 - [Nodemon](https://nodemon.io/) to watch for file changes and restart node (dev)
 - [PM2](http://pm2.keymetrics.io/) for monitoring node in production
 - [Webpack](https://webpack.js.org/) for bundling all modules
+- [React](https://facebook.github.io/react/) for UI
+- [Webpack: Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/) for switching modules during dev
 
 ## Dev Setup
 
