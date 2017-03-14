@@ -23,6 +23,7 @@ See [prototype/README.md](/prototype).
 - [Webpack](https://webpack.js.org/) for bundling all modules
 - [React](https://facebook.github.io/react/) for UI
 - [Webpack: Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/) for switching modules during dev
+- [ImmutableJS](https://facebook.github.io/immutable-js/) for managing immutable collections
 
 ## Dev Setup
 
