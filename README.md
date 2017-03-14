@@ -20,6 +20,7 @@ See [prototype/README.md](/prototype).
 - [Express](http://expressjs.com/) for web framework
 - [Nodemon](https://nodemon.io/) to watch for file changes and restart node (dev)
 - [PM2](http://pm2.keymetrics.io/) for monitoring node in production
+- [Webpack](https://webpack.js.org/) for bundling all modules
 
 ## Dev Setup
 
