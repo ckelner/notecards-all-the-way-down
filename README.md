@@ -26,6 +26,7 @@ See [prototype/README.md](/prototype).
 - [ImmutableJS](https://facebook.github.io/immutable-js/) for managing immutable collections
 - [Redux](http://redux.js.org/) for managing application state
 - [React-Redux](https://github.com/reactjs/react-redux) React bindings for Redux
+- [React Router](https://reacttraining.com/react-router/) for navigating between pages
 
 ## Dev Setup
 
