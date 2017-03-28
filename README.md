@@ -10,13 +10,13 @@ See [prototype/README.md](/prototype).
 
 - [Node](https://nodejs.org/en/) for runtime
 - [Yarn](https://yarnpkg.com/en/) for package management
-- [Babel](https://babeljs.io/) for ES6 to ES5
 - [ES6](http://es6-features.org/)
+- [Babel](https://babeljs.io/) for ES6 to ES5
 - [ESLint](http://eslint.org/) for linting
   - [AirBnB's ESLint Config](https://www.npmjs.com/package/eslint-config-airbnb)
 - [Flow](https://flowtype.org/) for static type checking
 - [Jest](https://facebook.github.io/jest/) for testing
-- [Husky](https://github.com/typicode/husky) for enforcing testing
+- [Husky](https://github.com/typicode/husky) for precommit/push hooks
 - [Express](http://expressjs.com/) for web framework
 - [Nodemon](https://nodemon.io/) to watch for file changes and restart node (dev)
 - [PM2](http://pm2.keymetrics.io/) for monitoring node in production
