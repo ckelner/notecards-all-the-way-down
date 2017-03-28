@@ -27,6 +27,7 @@ See [prototype/README.md](/prototype).
 - [Redux](http://redux.js.org/) for managing application state
 - [React-Redux](https://github.com/reactjs/react-redux) React bindings for Redux
 - [React Router](https://reacttraining.com/react-router/) for navigating between pages
+- [React Helmet](https://github.com/nfl/react-helmet) for injecting content in `<head>`
 
 ## Dev Setup
 
