@@ -6,9 +6,9 @@ A recursive notecard app.  Incomplete - Still a _**WIP**_
 
 ## Prototype
 
-A hand-rolled vanilla JS prototype can be found by [clicking
+A hand-rolled vanilla JS prototype was built for proof of concept purposes. A live demo can be found by [clicking
 here](http://notecardsallthewaydown.s3-website-us-east-1.amazonaws.com/). The
-code for the prototype can be found in the [./prototype](./prototype) directory.
+code for the prototype can be found in the [prototype](./prototype) directory.
 
 ## Tools/Tech Used
 
