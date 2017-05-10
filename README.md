@@ -30,6 +30,7 @@ See [prototype/README.md](/prototype).
 - [React Helmet](https://github.com/nfl/react-helmet) for injecting content in `<head>`
 - [Socket.IO](https://github.com/socketio/socket.io) for using WebSockets
 - [Bootstrap](http://getbootstrap.com/) for UI lookey-loos
+- [JSS](http://cssinjs.org/) for a CSS-in-JS library to write your styles in JavaScript and inject them into your app.
 
 ## Dev Setup
 
