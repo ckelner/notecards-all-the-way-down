@@ -41,6 +41,10 @@ See [prototype/README.md](/prototype).
 use a version manager like [NVM](https://github.com/creationix/nvm).
 - Follow [Yarnpkg.com](https://yarnpkg.com/en/) install instructions.
 
+## Prototype
+
+A hand-rolled vanilla JS prototype can be found by [clicking here](http://notecardsallthewaydown.s3-website-us-east-1.amazonaws.com/).
+
 ## Background
 
 A friend (`friend-one`) wanted this app.  I decided I wanted to do it, but not put much effort into it.
