@@ -43,7 +43,9 @@ use a version manager like [NVM](https://github.com/creationix/nvm).
 
 ## Prototype
 
-A hand-rolled vanilla JS prototype can be found by [clicking here](http://notecardsallthewaydown.s3-website-us-east-1.amazonaws.com/).
+A hand-rolled vanilla JS prototype can be found by [clicking
+here](http://notecardsallthewaydown.s3-website-us-east-1.amazonaws.com/). The
+code for the prototype can be found in the [./prototype](./prototype) directory.
 
 ## Background
 
