@@ -1,0 +1,3 @@
+language: node_js
+node_js: node
+script: cd app && yarn test && yarn prod:build
