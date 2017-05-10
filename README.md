@@ -1,6 +1,7 @@
 # Notecards all the way down
 
-[![Build Status](https://travis-ci.org/ckelner/notecards-all-the-way-down.svg?branch=master)](https://travis-ci.org/ckelner/notecards-all-the-way-down)
+[![Build Status](https://img.shields.io/travis/ckelner/notecards-all-the-way-down.svg?style=flat-square)](https://travis-ci.org/ckelner/notecards-all-the-way-down)
+[![Coverage Status](https://img.shields.io/coveralls/ckelner/notecards-all-the-way-down.svg?style=flat-square)](https://coveralls.io/github/ckelner/notecards-all-the-way-down?branch=master)
 
 A recursive notecard app.  Incomplete - Still a _**WIP**_
 
@@ -36,6 +37,7 @@ code for the prototype can be found in the [prototype](./prototype) directory.
 - [Bootstrap](http://getbootstrap.com/) for UI lookey-loos
 - [JSS](http://cssinjs.org/) for a CSS-in-JS library to write your styles in JavaScript and inject them into your app.
 - [Travis CI](https://travis-ci.org) for testing
+- [Coveralls](https://coveralls.io/) for test history & stats
 
 ## Dev Setup
 
