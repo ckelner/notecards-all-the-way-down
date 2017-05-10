@@ -59,6 +59,8 @@ typings/
 
 # es6 -> es5 files
 app/lib
+lib
 
 # webpack
 /app/dist/
+dist
