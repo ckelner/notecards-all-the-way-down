@@ -2,6 +2,8 @@
 
 A recursive notecard app.  Incomplete - Still a _**WIP**_
 
+[![Build Status](https://travis-ci.org/ckelner/notecards-all-the-way-down.svg?branch=master)](https://travis-ci.org/ckelner/notecards-all-the-way-down)
+
 ## Prototype
 
 See [prototype/README.md](/prototype).
