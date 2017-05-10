@@ -29,6 +29,7 @@ See [prototype/README.md](/prototype).
 - [React Router](https://reacttraining.com/react-router/) for navigating between pages
 - [React Helmet](https://github.com/nfl/react-helmet) for injecting content in `<head>`
 - [Socket.IO](https://github.com/socketio/socket.io) for using WebSockets
+- [Bootstrap](http://getbootstrap.com/) for UI lookey-loos
 
 ## Dev Setup
 
