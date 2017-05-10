@@ -24,7 +24,6 @@ code for the prototype can be found in the [prototype](./prototype) directory.
 - [Husky](https://github.com/typicode/husky) for precommit/push hooks
 - [Express](http://expressjs.com/) for web framework
 - [Nodemon](https://nodemon.io/) to watch for file changes and restart node (dev)
-- [PM2](http://pm2.keymetrics.io/) for monitoring node in production
 - [Webpack](https://webpack.js.org/) for bundling all modules
 - [React](https://facebook.github.io/react/) for UI
 - [Webpack: Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/) for switching modules during dev
@@ -38,6 +37,8 @@ code for the prototype can be found in the [prototype](./prototype) directory.
 - [JSS](http://cssinjs.org/) for a CSS-in-JS library to write your styles in JavaScript and inject them into your app.
 - [Travis CI](https://travis-ci.org) for testing
 - [Coveralls](https://coveralls.io/) for test history & stats
+- [Heroku](http://heroku.com) for hosting
+- [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) for working with heroku locally
 
 ## Dev Setup
 
